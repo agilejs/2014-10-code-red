@@ -11,6 +11,7 @@ addons:
 deploy:
   provider: heroku
   app: agilejs-code-red
+  strategy: git
   api_key:
     secure: ! 'OnXub9+04heE4iU2+pCu+YG1y4n1lAH2QbDywixSj+shoMYUcFz7q1IukMlM
 

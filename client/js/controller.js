@@ -11,7 +11,7 @@ function AppCtrl ($scope, $location) {
     };
 }
 
-function WelcomeCtrl (moviesResponse) {
+function WelcomeCtrl ($scope, moviesResponse) {
     'use strict';
     $scope.movies = moviesResponse.data;
 }

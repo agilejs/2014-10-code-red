@@ -2,7 +2,7 @@ module.exports = function() {
     'use strict';
 
     this.title = element(by.model('movie.title'));
-    this.description = element(by.model('movie.description'));
+    this.description = element(by.css('text-angular div[contenteditable=true]'));
     this.save = element(by.css('.btn-primary'));
 
     this.open = function() {

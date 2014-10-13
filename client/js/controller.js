@@ -31,6 +31,21 @@ MoviesListCtrl.resolve = WelcomeCtrl.resolve = {
     }
 };
 
+function MoviesListSortingCtrl ($scope) {
+    'use strict';
+    $scope.order = 'title';
+    $scope.reverse = false;
+
+    $scope.sortBy = function(order) {
+        if ($scope.order === order) {
+            $scope.reverse = !$scope.reverse;
+        } else {
+            $scope.order = order;
+            $scope.reverse = false;
+        }
+    };
+}
+
 function MoviesAddCtrl ($scope, $http, $location) {
     'use strict';
     $scope.movie = {};

@@ -21,6 +21,7 @@ function MoviesListCtrl ($scope, $location, moviesResponse) {
     $scope.movies = moviesResponse.data;
     $scope.add = function () {
         $location.path('/movies/new');
+        return false;
     };
 }
 

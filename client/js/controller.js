@@ -11,7 +11,9 @@ function AppCtrl ($scope, $location) {
     };
 }
 
-function WelcomeCtrl () {
+function WelcomeCtrl ($scope, moviesResponse) {
+    'use strict';
+    $scope.movies = moviesResponse.data;
 }
 
 function MoviesListCtrl ($scope, $location, moviesResponse) {
@@ -22,12 +24,27 @@ function MoviesListCtrl ($scope, $location, moviesResponse) {
     };
 }
 
-MoviesListCtrl.resolve = {
+MoviesListCtrl.resolve = WelcomeCtrl.resolve = {
     moviesResponse: function ($http) {
         'use strict';
         return $http.get('/movies');
     }
 };
+
+function MoviesListSortingCtrl ($scope) {
+    'use strict';
+    $scope.order = 'title';
+    $scope.reverse = false;
+
+    $scope.sortBy = function(order) {
+        if ($scope.order === order) {
+            $scope.reverse = !$scope.reverse;
+        } else {
+            $scope.order = order;
+            $scope.reverse = false;
+        }
+    };
+}
 
 function MoviesAddCtrl ($scope, $http, $location) {
     'use strict';

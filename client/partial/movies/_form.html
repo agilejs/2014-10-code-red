@@ -13,12 +13,15 @@
   <div class="control-group">
     <label class="control-label" for="inputDescription">Description</label>
     <div class="controls">
-      <textarea rows="5"
+      <text-angular
+                ng-model="movie.description">
+      </text-angular>
+      <!--textarea rows="5"
                 id="inputDescription"
                 name="description"
                 class="input-block-level"
                 ng-model="movie.description">
-      </textarea>
+      </textarea-->
     </div>
   </div>
   <div class="control-group">

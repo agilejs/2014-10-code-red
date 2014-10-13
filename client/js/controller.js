@@ -1,6 +1,14 @@
-function AppCtrl ($scope) {
+function AppCtrl ($scope, $location) {
     'use strict';
     $scope.title = 'The Movie Database';
+
+    $scope.isActive = function(route, starts) {
+        if (starts) {
+            return ($location.path().indexOf(route) === 0);
+        } else {
+            return (route === $location.path());
+        }
+    };
 }
 
 function WelcomeCtrl () {

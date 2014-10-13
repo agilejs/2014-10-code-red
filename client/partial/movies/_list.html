@@ -1,11 +1,11 @@
-<table class="table table-striped table-hover">
+<table class="table table-striped table-hover" ng-controller="MoviesListSortingCtrl">
     <thead>
         <tr>
-            <th>Title</th>
+            <th><a href="#" ng-click="sortBy('title')">Title <span ng-show="order==='title'">(&#x21d5;)</span></a></th>
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="movie in movies | orderBy:'title'">
+        <tr ng-repeat="movie in movies | orderBy:order:reverse">
             <td>
                 <a href="#" ng-href="/movies/{{movie.id}}">
                     {{movie.title}}
